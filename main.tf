@@ -6,7 +6,7 @@ resource "aws_secretsmanager_secret" "mongo_uri" {
 resource "aws_secretsmanager_secret_version" "mongo_uri" {
   secret_id = aws_secretsmanager_secret.mongo_uri.id
   secret_string = jsonencode({
-    mongodb_uri = "mongodb://${var.mongodb_username}:${var.mongodb_password}@${var.mongodb_host}:27017/mydb?authSource=admin"
+    mongodb_uri = "mongodb+srv://${var.mongodb_username}:${var.mongodb_password}@${var.mongodb_host}/?retryWrites=true&w=majority" # :27017/mydb?authSource=admin"
   })
 }
 
