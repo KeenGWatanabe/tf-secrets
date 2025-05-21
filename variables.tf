@@ -15,3 +15,9 @@ variable "mongodb_host" {
   description = "MongoDB host (e.g., 'cluster-xxxx.xxxx.docdb.amazonaws.com')"
   type        = string
 }
+
+variable "mongodb_database" {
+  description = "Name of MongoDB to connect to"
+  type = string
+  
+}
