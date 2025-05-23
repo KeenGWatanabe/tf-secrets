@@ -140,3 +140,7 @@ data "aws_secretsmanager_secret" "mongo_uri" {
 - **Scalable**: Add more secrets (e.g., API keys) the same way.  
 
 Let me know if you'd like help debugging IAM permissions or secret injection!
+
+# FORCE DELETION OF AWS SECRETS IF RECREATING? AWS Secrets Manager retains deleted secrets for 7 days (default recovery window).
+
+aws secretsmanager delete-secret --secret-id prod/mongodb_uri --force-delete-without-recovery
