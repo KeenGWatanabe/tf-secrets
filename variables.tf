@@ -16,8 +16,8 @@ variable "mongodb_host" {
   type        = string
 }
 
-# variable "mongodb_database" {
-#   description = "Name of MongoDB to connect to"
-#   type = string
+variable "mongodb_database" {
+  description = "Name of MongoDB to connect to"
+  type = string
   
-# }
+}
