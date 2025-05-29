@@ -19,5 +19,6 @@ variable "mongodb_host" {
 variable "mongodb_database" {
   description = "Name of MongoDB to connect to"
   type = string
+  sensitive = true
   
 }
