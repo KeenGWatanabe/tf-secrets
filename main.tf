@@ -14,3 +14,9 @@ output "mongodb_secret_arn" {
   value       = aws_secretsmanager_secret.mongo_uri.arn
   description = "ARN of the MongoDB secret for ECS task reference"
 }
+
+
+output "mongodb_secret_name" {
+  value       = aws_secretsmanager_secret.mongo_uri.name  # "prod/mongodb_uri"
+  description = "Name of the MongoDB secret"
+}
