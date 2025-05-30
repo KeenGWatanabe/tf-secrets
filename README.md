@@ -125,3 +125,9 @@ Your app will **continue working** because:
 2. Your Node.js app still reads `process.env.MONGO_URI` as before.  
 
 This is the **AWS-recommended** way to manage secrets. Let me know if you’d like help testing the migration!
+
+--------------------------------
+
+mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:255945442255:secret:prod/mongodb_uri-ANu39I"
+mongodb_secret_name = "prod/mongodb_uri"
+----------------------------------
