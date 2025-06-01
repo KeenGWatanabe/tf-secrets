@@ -128,6 +128,11 @@ This is the **AWS-recommended** way to manage secrets. Let me know if you’d li
 
 --------------------------------
 
-mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:255945442255:secret:prod/mongodb_uri-ANu39I"
+mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:255945442255:secret:prod/mongodb_uri-QX0TxF"  
 mongodb_secret_name = "prod/mongodb_uri"
+
 ----------------------------------
+
+# FORCE DELETION OF AWS SECRETS IF RECREATING? AWS Secrets Manager retains deleted secrets for 7 days (default recovery window).
+
+aws secretsmanager delete-secret --secret-id prod/mongodb_uri --force-delete-without-recovery
