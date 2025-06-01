@@ -1,10 +1,10 @@
 # main.tf
-resource "aws_secretsmanager_secret" "mongo_uri" {
+resource "aws_secretsmanager_secret" "mongodb_uri" {
   name        = "prod/mongodb_uri"
 }
 
-resource "aws_secretsmanager_secret_version" "mongo_uri" {
-  secret_id = aws_secretsmanager_secret.mongo_uri.id
+resource "aws_secretsmanager_secret_version" "mongodb_uri" {
+  secret_id = aws_secretsmanager_secret.mongodb_uri.id
   secret_string = jsonencode({
     MONGODB_ATLAS_URI = "mongodb+srv://${var.mongodb_username}:${var.mongodb_password}@${var.mongodb_host}/?retryWrites=true&w=majority&appName=${var.mongodb_database}" # :27017/mydb?authSource=admin"
   })
@@ -16,12 +16,12 @@ resource "aws_cloudwatch_log_group" "ecs_logs" {
 }
 
 output "mongodb_secret_arn" {
-  value       = aws_secretsmanager_secret.mongo_uri.arn
+  value       = aws_secretsmanager_secret.mongodb_uri.arn
   description = "ARN of the MongoDB secret for ECS task reference"
 }
 
 
 output "mongodb_secret_name" {
-  value       = aws_secretsmanager_secret.mongo_uri.name  # "prod/mongodb_uri"
+  value       = aws_secretsmanager_secret.mongodb_uri.name  # "prod/mongodb_uri"
   description = "Name of the MongoDB secret"
 }
