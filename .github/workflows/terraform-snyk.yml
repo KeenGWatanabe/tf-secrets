@@ -40,5 +40,5 @@ jobs:
         run: terraform validate
 
       # Optional: Plan output for review
-      - name: Terraform Plan (Dry Run)
-        run: terraform plan -input=false -no-color
+      # - name: Terraform Plan (Dry Run)
+      #   run: terraform plan -input=false -no-color
