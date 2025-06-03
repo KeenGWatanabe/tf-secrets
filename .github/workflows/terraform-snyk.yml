@@ -1,0 +1,44 @@
+name: Terraform Secrets Manager Security Scan
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  snyk-iac:
+    name: Snyk IaC Scan (Secrets Manager)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      # Scan Terraform for Secrets Manager misconfigurations
+      - name: Snyk IaC Scan
+        uses: snyk/actions/iac@master
+        with:
+          file: .  # Or specify your TF directory (e.g., 'infra/')
+          args: --severity-threshold=high --target=aws_secretsmanager
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+  terraform-validate:
+    name: Terraform Validate
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      # Optional: Plan output for review
+      - name: Terraform Plan (Dry Run)
+        run: terraform plan -input=false -no-color
