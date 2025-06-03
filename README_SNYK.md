@@ -11,3 +11,5 @@ Ref: https://github.com/KeenGWatanabe/snyk-scan
 
 Include your AWS SECRET KEY and AWS ACCESS KEY in Github Actions Secret.
 Take a look at the sample .github/workflows/package-scan.yml file on a simple workflow to test IAC, Code and Open Source plugins + npm audit.
+
+![Snyk scan result](/images/secretsSnykScan.png)
