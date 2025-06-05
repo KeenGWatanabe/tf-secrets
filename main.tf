@@ -1,4 +1,4 @@
-# give a name to secretsmanager
+``# give a name to secretsmanager
 resource "aws_secretsmanager_secret" "mongodb_uri" {
   name        = "prod/mongodb_uri"
 }
