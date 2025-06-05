@@ -1,6 +1,6 @@
 # give a name to secretsmanager
 resource "aws_secretsmanager_secret" "mongodb_uri" {
-  name        = "prod/mongodb_uri"
+  name        = "test/mongodb_uri"
 }
 
 # set references for ECS to use the secret
@@ -12,13 +12,7 @@ resource "aws_secretsmanager_secret_version" "mongodb_uri" {
   })
 }
 
-# resource "aws_cloudwatch_log_group" "ecs_logs" {
-#   name              = "/ecs/ce-grp-4t-app-service-f48ddcab"  # Match what your ECS task expects
-#   retention_in_days = 7  # or whatever retention period you want
-# }
-data "aws_cloudwatch_log_group" "ecs_logs" {
-  name = "/ecs/ce-grp-4t-app-service-f48ddcab"  # Match what your ECS task expects
-}
+# Output the secret ARN and name for reference in ECS task definitions
 
 output "mongodb_secret_arn" {
   value       = aws_secretsmanager_secret.mongodb_uri.arn
@@ -27,6 +21,6 @@ output "mongodb_secret_arn" {
 
 
 output "mongodb_secret_name" {
-  value       = aws_secretsmanager_secret.mongodb_uri.name  # "prod/mongodb_uri"
+  value       = aws_secretsmanager_secret.mongodb_uri.name  # "test/mongodb_uri"
   description = "Name of the MongoDB secret"
 }
