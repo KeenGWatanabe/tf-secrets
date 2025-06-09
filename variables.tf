@@ -26,5 +26,4 @@ variable "mongodb_database" {
 variable "name_prefix" {
   description = "Prefix for naming resources"
   type        = string
-  default     = "prod"  # Default value, can be overridden in terraform.tfvars
 }
