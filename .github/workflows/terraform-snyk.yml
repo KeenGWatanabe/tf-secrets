@@ -2,9 +2,9 @@ name: Terraform Secrets Manager Security Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "secrets" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "secrets" ]
 
 jobs:
   snyk-iac:
