@@ -131,8 +131,10 @@ This is the **AWS-recommended** way to manage secrets. Let me know if you’d li
 
 # Outputs:
 
-mongodb_secret_arn = "arn:aws:secretsmanager:ap-southeast-1:015519021252:secret:code/mongodb_uri-LmJ1ct"
+
+mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:015519021252:secret:code/mongodb_uri-nvYyYg"
 mongodb_secret_name = "code/mongodb_uri"
+
 
 ----------------------------------
 
