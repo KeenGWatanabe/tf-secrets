@@ -127,9 +127,14 @@ Your app will **continue working** because:
 This is the **AWS-recommended** way to manage secrets. Let me know if you’d like help testing the migration!
 
 --------------------------------
-# generated 20250610
-mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:255945442255:secret:test/mongodb_uri-5c38zg"
-mongodb_secret_name = "test/mongodb_uri"
+# generated 20250611
+
+# Outputs:
+
+
+mongodb_secret_arn = "arn:aws:secretsmanager:us-east-1:015519021252:secret:code/mongodb_uri-nvYyYg"
+mongodb_secret_name = "code/mongodb_uri"
+
 
 ----------------------------------
 
